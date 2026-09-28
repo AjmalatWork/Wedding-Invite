@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nida &amp; Ajmal — Nikah Invitation</title>
+<meta name="description" content="You are invited to the Nikah of Nida Farhat and Ajmal Khan — 18th December 2026, Fatehpur.">
+<meta name="theme-color" content="#2a0d13">
+
+<!-- Favicon: an N/A initial mark, inlined as an SVG data URI so the tab icon
+     needs no extra asset file. Deliberately simpler than the on-page
+     monogram (filled gold disc, dark letters, system serif, no ring or
+     gem) -- at 16-24px both thin gold linework and the gem-between-letters
+     detail collapse into noise; tested against the actual fallback font
+     (Georgia bold italic, since a webfont can't be relied on to be loaded
+     the moment a browser fetches a favicon) down to 16px before settling
+     on this spacing. Safari ignores SVG favicons and just shows none,
+     which is a harmless fallback, not a broken one. -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ccircle%20cx%3D%2750%27%20cy%3D%2750%27%20r%3D%2748%27%20fill%3D%27%23c9a44c%27%2F%3E%3Ctext%20x%3D%2731%27%20y%3D%2756%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27central%27%20font-family%3D%27Georgia%2C%20Times%20New%20Roman%2C%20serif%27%20font-style%3D%27italic%27%20font-weight%3D%27700%27%20font-size%3D%2740%27%20fill%3D%27%230d0c0a%27%3EN%3C%2Ftext%3E%3Ctext%20x%3D%2769%27%20y%3D%2756%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27central%27%20font-family%3D%27Georgia%2C%20Times%20New%20Roman%2C%20serif%27%20font-style%3D%27italic%27%20font-weight%3D%27700%27%20font-size%3D%2740%27%20fill%3D%27%230d0c0a%27%3EA%3C%2Ftext%3E%3C%2Fsvg%3E">
+
+<meta property="og:title" content="Nida &amp; Ajmal — Nikah Invitation">
+<meta property="og:description" content="18th December 2026 · 6:00 PM · Fatehpur">
+<meta property="og:type" content="website">
+<!-- PLACEHOLDER — nida-ajmal-og.png ships alongside this file. A relative
+     path resolves fine once both are hosted at the same origin; if you ever
+     serve this page from a different path than the image, swap this for an
+     absolute https:// URL instead, since WhatsApp/Facebook's scrapers fetch
+     it directly rather than resolving it in a browser context. -->
+<meta property="og:image" content="nida-ajmal-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nida &amp; Ajmal — Nikah, 18th December 2026, Fatehpur">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="nida-ajmal-og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Marcellus&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   PALETTE & TOKENS — "Maroon/Wine & Gold"
+   ============================================================ */
+:root{
+  /* ---------- COLOUR TOKENS ----------
+     Every colour on the page resolves from this one set. Each colour is
+     stored once as an "R,G,B" triplet, so a single token serves both solid
+     fills and translucent overlays -- rgba(var(--accent-rgb), .3) -- with no
+     second hardcoded copy to drift out of sync. The values here are the
+     shipping default, Maroon/Wine & Gold. */
+
+  /* grounds */
+  --bg-rgb:        42,13,19;
+  --bg-2-rgb:      50,16,23;
+  --bg-3-rgb:      60,21,29;
+  --bg-deep-rgb:   31,9,14;
+
+  /* accents */
+  --accent-rgb:    201,164,76;
+  --accent-lt-rgb: 230,200,119;
+  --accent-hi-rgb: 243,224,168;
+  --accent-dp-rgb: 138,109,44;
+  --accent-2-rgb:  201,164,76;   /* secondary accent -- equals gold in this theme */
+
+  /* ink & shading */
+  --text-rgb:      244,233,221;
+  --on-accent-rgb: 42,13,19;     /* text sitting on a filled accent surface */
+  --veil-rgb:      16,3,6;       /* shadow, vignette, and door shading */
+
+  /* ---------- derived ----------
+     These reference the triplets above, so they re-resolve automatically
+     whenever a theme redefines them. Style everything through these. */
+  --bg:         rgb(var(--bg-rgb));
+  --bg-2:       rgb(var(--bg-2-rgb));
+  --bg-3:       rgb(var(--bg-3-rgb));
+  --bg-deep:    rgb(var(--bg-deep-rgb));
+  --accent:     rgb(var(--accent-rgb));
+  --accent-lt:  rgb(var(--accent-lt-rgb));
+  --accent-hi:  rgb(var(--accent-hi-rgb));
+  --accent-dp:  rgb(var(--accent-dp-rgb));
+  --accent-2:   rgb(var(--accent-2-rgb));
+  --text:       rgb(var(--text-rgb));
+  --text-dim:   rgba(var(--text-rgb),.66);
+  --text-faint: rgba(var(--text-rgb),.40);
+  --on-accent:  rgb(var(--on-accent-rgb));
+
+  /* ---------- type (shared by every theme) ---------- */
+  --display: "Cormorant Garamond", Georgia, serif;
+  --title:   "Marcellus", "Cormorant Garamond", serif;
+  --body:    "Lato", "Helvetica Neue", Arial, sans-serif;
+  --arabic:  "Amiri", "Traditional Arabic", "Scheherazade New", serif;
+
+  --ease:      cubic-bezier(.22,.61,.36,1);
+  --ease-door: cubic-bezier(.62,.02,.20,1);
+  --reveal-t:  1050ms;
+
+  --pad: clamp(1.25rem, 5vw, 4rem);
+  --maxw: 62rem;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{
+  -webkit-text-size-adjust:100%; scroll-behavior:smooth;
+  /* The doors keep body.is-locked (overflow:hidden) on until they finish
+     opening, which removes the vertical scrollbar entirely; the moment it's
+     lifted, the scrollbar reappears and narrows the viewport, visibly
+     nudging the centred layout a few pixels left. Reserving the gutter here
+     -- on the root, permanently, in both states -- keeps that width constant
+     from first paint, so nothing shifts when the lock comes off. On
+     platforms with overlay scrollbars this reserves nothing and is a no-op. */
+  overflow-y:scroll;
+  scrollbar-gutter:stable;
+  /* Giving html an explicit height matters here: overflow-y:scroll above
+     means html's own overflow now governs the viewport directly, so the
+     old trick of the browser silently promoting body's overflow:hidden to
+     the viewport (which only happens while html's overflow is "visible")
+     no longer applies. body.is-locked's height:100% needs a definite
+     height to resolve against to still clip its own overflowing content,
+     so the lock keeps working locally on body regardless. */
+  height:100%;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--body);
+  font-weight:300;
+  line-height:1.75;
+  letter-spacing:.01em;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body.is-locked{ overflow:hidden; height:100%; touch-action:none; }
+
+img,svg{ max-width:100%; }
+::selection{ background:rgba(var(--accent-rgb),.28); color:var(--text); }
+
+/* ============================================================
+   AMBIENT BACKGROUND — jaali texture, warm depth, vignette
+   ============================================================ */
+.bg{ position:fixed; inset:0; z-index:0; pointer-events:none; }
+.bg-jaali{ position:absolute; inset:0; opacity:.055; }
+.bg-jaali svg{ width:100%; height:100%; display:block; }
+.bg-warm{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgba(var(--accent-rgb),.16), transparent 60%),
+    radial-gradient(90% 70% at 50% 110%, rgba(var(--accent-dp-rgb),.13), transparent 62%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 45%, var(--bg) 100%);
+}
+.bg-vignette{
+  position:absolute; inset:0;
+  background:radial-gradient(115% 85% at 50% 45%, transparent 42%, rgba(var(--veil-rgb),.62) 100%);
+}
+.defs{ position:absolute; width:0; height:0; overflow:hidden; }
+
+/* scroll progress hairline */
+.progress{
+  position:fixed; top:0; left:0; height:2px; width:100%;
+  transform:scaleX(0); transform-origin:0 50%;
+  background:linear-gradient(90deg, transparent, var(--accent-dp), var(--accent-lt), var(--accent-dp));
+  z-index:60; opacity:0; transition:opacity .6s var(--ease);
+}
+.progress.on{ opacity:.85; }
+
+/* ============================================================
+   THE GATE — jaali doors
+   ============================================================ */
+.gate{ position:fixed; inset:0; z-index:50; opacity:1; transition:opacity 650ms var(--ease); }
+/* Fading the whole gate out (instead of cutting it with display:none) keeps
+   whatever the doors were showing resolving gradually into the page behind
+   them, rather than switching in a single frame. */
+.gate.is-hiding{ opacity:0; pointer-events:none; }
+.gate.is-gone{ display:none; }
+
+.doors{ position:absolute; inset:0; perspective:1500px; perspective-origin:50% 46%; z-index:1; }
+.door{
+  position:absolute; top:0; bottom:0; width:50.4vw;
+  overflow:hidden;
+  background:linear-gradient(180deg, var(--bg-3), var(--bg) 62%, var(--bg-deep));
+  backface-visibility:hidden;
+  will-change:transform;
+}
+.door-l{ left:0;  transform-origin:left center;  }
+.door-r{ right:0; transform-origin:right center; }
+.gate.is-open .door-l{ animation:swingL 1750ms var(--ease-door) forwards; }
+.gate.is-open .door-r{ animation:swingR 1750ms var(--ease-door) forwards; }
+@keyframes swingL{
+  0%{ transform:rotateY(0deg); }
+  11%{ transform:rotateY(2.6deg); }
+  100%{ transform:rotateY(-102deg); }
+}
+@keyframes swingR{
+  0%{ transform:rotateY(0deg); }
+  11%{ transform:rotateY(-2.6deg); }
+  100%{ transform:rotateY(102deg); }
+}
+
+/* the inner canvas is a full viewport wide, so the two leaves compose one artwork */
+.door-inner{ position:absolute; top:0; height:100%; width:100vw; }
+.door-l .door-inner{ left:0; }
+.door-r .door-inner{ right:0; }
+
+.door-fill{ position:absolute; inset:0; width:100%; height:100%; opacity:.30; }
+.door-shade{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(70% 60% at 50% 45%, rgba(var(--accent-rgb),.10), transparent 70%),
+    linear-gradient(90deg, rgba(var(--veil-rgb),.55), transparent 22%, transparent 78%, rgba(var(--veil-rgb),.55));
+}
+/* each leaf darkens as it turns away from the light */
+.door::after{
+  content:""; position:absolute; inset:0; background:rgb(var(--veil-rgb)); opacity:0;
+  transition:opacity 1.4s var(--ease); pointer-events:none;
+}
+.gate.is-open .door::after{ opacity:.55; }
+
+.arch{
+  position:absolute; left:50%; top:50%;
+  transform:translate(-50%,-50%);
+  height:min(66vh, 620px); width:auto;
+  filter:drop-shadow(0 0 18px rgba(var(--accent-rgb),.14));
+}
+
+/* meeting seam */
+.seam{
+  position:absolute; top:0; bottom:0; left:50%; width:2px; margin-left:-1px; z-index:2;
+  background:linear-gradient(180deg, transparent, rgba(var(--accent-rgb),.55) 18%, rgba(var(--accent-hi-rgb),.8) 50%, rgba(var(--accent-rgb),.55) 82%, transparent);
+  box-shadow:0 0 22px rgba(var(--accent-rgb),.45);
+  transition:opacity .55s var(--ease);
+}
+.gate.is-open .seam{ opacity:0; }
+
+/* the seal: a small monogram medallion at the seam, like a wax seal or a
+   haveli door's brass knocker. A separate element from .seam with its own
+   matching fade -- .seam's own rule above is untouched -- so it dissolves
+   alongside the seam glow the instant the doors start to move. */
+.seal{
+  position:absolute; left:50%; top:50%; z-index:3; pointer-events:none;
+  width:clamp(56px,14vw,84px); height:auto;
+  transform:translate(-50%,-50%);
+  filter:drop-shadow(0 0 10px rgba(var(--accent-rgb),.35));
+  transition:opacity .55s var(--ease);
+}
+.gate.is-open .seal{ opacity:0; }
+/* The monogram's gold linework sits directly on the same busy jaali
+   pattern as the rest of the door, so it was reading as noise rather
+   than a mark. A dark disc behind it (only for this door-seam instance,
+   not the shared #monogram symbol itself, which is used again in the
+   closing section against a plain background where a backdrop would be
+   redundant) gives the ring and letters a clear surface to stand on. */
+.seal-backdrop{ fill:rgba(var(--veil-rgb),.55); }
+
+/* the finial: a single shared dot+stem above the arch peak, positioned
+   with the exact same sizing/centering technique as .arch itself (same
+   viewBox height driving the scale) so it lands where the old per-door
+   copies did -- see the markup comment for why this is one element now
+   instead of two. Fades with the seam/seal on open. */
+.finial{
+  position:absolute; left:50%; top:50%; z-index:3; pointer-events:none;
+  height:min(66vh,620px); width:auto;
+  transform:translate(-50%,-50%);
+  transition:opacity .55s var(--ease);
+}
+.gate.is-open .finial{ opacity:0; }
+
+/* tap prompt */
+.prompt{
+  position:absolute; z-index:3; left:50%; bottom:clamp(3.5rem,12vh,8rem);
+  transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:.9rem;
+  background:none; border:0; padding:1rem 1.6rem; cursor:pointer;
+  color:var(--accent-lt); font-family:var(--title);
+  font-size:clamp(.66rem,2.4vw,.78rem); letter-spacing:.42em; text-transform:uppercase;
+  text-indent:.42em;
+  transition:opacity .5s var(--ease), transform .5s var(--ease);
+}
+.prompt:focus-visible{ outline:1px solid var(--accent); outline-offset:6px; border-radius:2px; }
+.gate.is-open .prompt{ opacity:0; transform:translateX(-50%) translateY(10px); pointer-events:none; }
+.prompt-ring{
+  width:clamp(52px,13vw,64px); height:clamp(52px,13vw,64px);
+  border:1px solid rgba(var(--accent-rgb),.7); border-radius:50%;
+  /* A thin border alone got lost in the jaali pattern behind it; a dark
+     scrim gives the ring (and the arrow inside it) a clear patch of its
+     own to read against, instead of fighting the door's own texture. */
+  background:rgba(var(--veil-rgb),.55);
+  display:grid; place-items:center; position:relative;
+}
+.prompt-ring::before{
+  content:""; position:absolute; inset:-9px; border-radius:50%;
+  border:1px solid rgba(var(--accent-rgb),.22);
+  animation:halo 3.4s var(--ease) infinite;
+}
+.prompt-ring svg{ width:44%; height:44%; fill:none; stroke:var(--accent-lt); stroke-width:1.4; }
+@keyframes halo{
+  0%{ transform:scale(.9); opacity:0; }
+  35%{ opacity:.9; }
+  100%{ transform:scale(1.5); opacity:0; }
+}
+/* idle hint if the invite is left untouched */
+.gate.is-idle .prompt{ animation:nudge 3.2s var(--ease) infinite; }
+@keyframes nudge{
+  0%,100%{ opacity:.62; }
+  50%{ opacity:1; text-shadow:0 0 22px rgba(var(--accent-lt-rgb),.55); }
+}
+.gate.is-idle .arch{ animation:shimmer 3.6s var(--ease) infinite; }
+@keyframes shimmer{
+  0%,100%{ filter:drop-shadow(0 0 14px rgba(var(--accent-rgb),.12)); }
+  50%{ filter:drop-shadow(0 0 30px rgba(var(--accent-lt-rgb),.34)); }
+}
+
+/* ============================================================
+   LAYOUT & SECTIONS
+   ============================================================ */
+main{ position:relative; z-index:1; }
+section{
+  position:relative;
+  padding:clamp(5rem,14vh,9rem) var(--pad);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center;
+}
+.wrap{ width:100%; max-width:var(--maxw); margin:0 auto; }
+
+#hero{ min-height:100vh; min-height:100svh; padding-block:clamp(4rem,10vh,7rem); }
+
+/* ---------- typography ---------- */
+.bismillah{
+  font-family:var(--arabic); font-weight:400;
+  font-size:clamp(1.6rem,7.2vw,3rem);
+  line-height:2.1; color:var(--accent-lt);
+  margin:0 0 .35rem;
+  text-shadow:0 0 34px rgba(var(--accent-rgb),.28);
+}
+.bismillah-en{
+  font-family:var(--body); font-size:clamp(.6rem,2.5vw,.72rem);
+  letter-spacing:.3em; text-transform:uppercase; text-indent:.3em;
+  color:var(--text-faint); margin:0 0 clamp(2rem,6vh,3.25rem);
+}
+
+.eyebrow{
+  font-family:var(--title);
+  font-size:clamp(.6rem,2.5vw,.74rem);
+  letter-spacing:.44em; text-transform:uppercase; text-indent:.44em;
+  color:var(--accent); margin:0 0 clamp(1.4rem,4vh,2.2rem);
+}
+.names{
+  font-family:var(--display); font-weight:300;
+  font-size:clamp(2.9rem,13vw,7rem);
+  line-height:1.02; letter-spacing:.012em;
+  margin:0; color:var(--text);
+}
+.names .amp{
+  display:block; font-style:italic; color:var(--accent-2);
+  font-size:.42em; line-height:1; margin:.24em 0;
+  letter-spacing:.04em;
+}
+.names .ltr{ display:inline-block; will-change:transform,opacity; }
+.surnames{
+  font-family:var(--title); color:var(--text-dim);
+  font-size:clamp(.66rem,2.9vw,.86rem);
+  letter-spacing:.36em; text-transform:uppercase; text-indent:.36em;
+  margin:clamp(1.5rem,4vh,2.2rem) 0 0;
+}
+h2.section-title{
+  font-family:var(--display); font-weight:300;
+  font-size:clamp(1.9rem,7vw,3.2rem); line-height:1.15;
+  margin:0 0 1rem; color:var(--text);
+}
+.lede{
+  font-size:clamp(.95rem,3.6vw,1.12rem);
+  color:var(--text-dim); max-width:34rem; margin:0 auto;
+}
+.fam{ color:var(--accent-lt); font-family:var(--display); font-size:1.28em; letter-spacing:.02em; }
+/* The two family names used to sit inline on one line, which meant the
+   browser was free to wrap wherever it liked -- on narrow phones that
+   landed mid-word ("La-" / "-te Mohammad Farhat"). Stacking them
+   deliberately, each on its own centred line with a small ampersand
+   between (the same treatment "Nida & Ajmal" already uses above), means
+   there's no line for a name to break across in the first place, at any
+   width -- not just a mobile-only patch. */
+.fam-line{ display:flex; flex-direction:column; align-items:center; gap:.3em; }
+.fam-amp{
+  display:block; font-style:italic; color:var(--accent-2);
+  font-size:.55em; line-height:1;
+}
+
+/* ---------- ornaments ---------- */
+.rule{ display:block; margin:clamp(1.6rem,5vh,2.6rem) auto; width:min(88%,26rem); height:auto; overflow:visible; }
+.rule .draw{
+  stroke:var(--accent); fill:none; stroke-width:1;
+  stroke-dasharray:var(--len,320); stroke-dashoffset:var(--len,320);
+  transition:stroke-dashoffset 1.5s var(--ease) .15s;
+}
+.reveal.in .rule .draw{ stroke-dashoffset:0; }
+.rule .gem{ fill:var(--accent-2); opacity:0; transition:opacity .7s var(--ease) 1.05s; }
+.reveal.in .rule .gem{ opacity:1; }
+
+.motif{ width:clamp(46px,13vw,66px); height:auto; display:block; margin:0 auto clamp(1.2rem,4vh,2rem); }
+.motif path, .motif circle{ fill:none; stroke:var(--accent); stroke-width:1.2; }
+
+/* SVG ornament colours resolve from the same tokens as everything else */
+#jaali > g, #jaaliDense > g{ stroke:var(--accent); }
+.arch-outline{ stroke:var(--accent); }
+.arch-inline{ stroke:var(--accent-dp); }
+.arch-finial{ fill:var(--accent); }
+.arch-stem{ stroke:var(--accent); }
+#archGlow .glow-a{ stop-color:var(--accent-lt); }
+#archGlow .glow-b, #archGlow .glow-c{ stop-color:var(--accent); }
+
+.mono-ring{ fill:none; stroke:var(--accent); stroke-width:2; }
+.mono-letter{
+  font-family:var(--display); font-weight:500;
+  font-size:42px; fill:var(--accent);
+}
+/* mirrors .names .amp: the ampersand is the one part of the wordmark that's
+   always smaller, italic, and the secondary accent -- same rule here. */
+.mono-amp{
+  font-family:var(--display); font-style:italic; font-weight:500;
+  font-size:23px; fill:var(--accent-2);
+}
+
+/* ---------- hero date strip + scroll cue ---------- */
+.hero-when{
+  font-family:var(--title); color:var(--accent);
+  font-size:clamp(.62rem,2.6vw,.78rem);
+  letter-spacing:.38em; text-transform:uppercase; text-indent:.38em;
+  margin:clamp(1.6rem,5vh,2.4rem) 0 0;
+}
+.scroll-cue{
+  position:absolute; left:50%; bottom:clamp(1.5rem,5vh,2.6rem);
+  transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:.7rem;
+  font-family:var(--title); font-size:.58rem; letter-spacing:.36em;
+  text-transform:uppercase; text-indent:.36em; color:var(--text-faint);
+  opacity:0; transition:opacity 1s var(--ease);
+}
+.scroll-cue.on{ opacity:1; }
+.scroll-cue .track{
+  width:1px; height:clamp(34px,7vh,54px); position:relative;
+  background:linear-gradient(180deg, rgba(var(--accent-rgb),.5), transparent);
+}
+.scroll-cue .track::after{
+  content:""; position:absolute; left:-2px; top:0; width:5px; height:5px;
+  border-radius:50%; background:var(--accent-lt); box-shadow:0 0 10px var(--accent);
+  animation:drip 2.4s var(--ease) infinite;
+}
+@keyframes drip{
+  0%{ transform:translateY(0); opacity:0; }
+  25%{ opacity:1; }
+  100%{ transform:translateY(clamp(34px,7vh,54px)); opacity:0; }
+}
+
+/* ---------- the announcement (date / time / place) ---------- */
+.day-line{
+  display:flex; align-items:center; justify-content:center;
+  gap:clamp(.6rem,3vw,1.4rem); flex-wrap:nowrap;
+}
+.day-num{
+  font-family:var(--display); font-weight:300;
+  font-size:clamp(4.6rem,22vw,11rem); line-height:.9;
+  color:var(--accent-lt); font-variant-numeric:lining-nums tabular-nums;
+  text-shadow:0 0 46px rgba(var(--accent-rgb),.22);
+}
+/* an explicit column, not incidental text-wrap: month and year used to stack
+   only because "Twenty Twenty Six" was long enough to wrap inside a
+   constrained width. "2026" is short enough that it wouldn't reliably wrap
+   the same way, so the stacking is now a real layout rule, not a side
+   effect of the old copy's length. */
+.day-stack{ display:flex; flex-direction:column; gap:.3rem; text-align:left; }
+.day-month{
+  font-family:var(--display); font-weight:400; font-style:italic;
+  font-size:clamp(1.5rem,7vw,3rem); line-height:1.1; color:var(--text);
+}
+.day-year{
+  /* the old letter-spacing:.4em was sized for spelling out "Twenty Twenty
+     Six" as a tracked caption-style word; run across bare digits it would
+     space "2 0 2 6" apart like static rather than a year. Restyled instead
+     as a numeral companion to the big "18" -- same display face and
+     tabular figures, clearly secondary in size and in the duller of the
+     two golds, but legible as a year rather than a whisper. */
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(1.05rem,4.4vw,1.9rem); line-height:1;
+  font-variant-numeric:lining-nums tabular-nums;
+  letter-spacing:.07em; color:var(--accent);
+}
+.day-sup{ font-size:.34em; vertical-align:super; letter-spacing:.04em; color:var(--accent); }
+.when-where{
+  display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
+  gap:clamp(.7rem,3vw,1.6rem);
+  font-family:var(--title);
+  font-size:clamp(.72rem,3vw,1rem);
+  letter-spacing:.24em; text-transform:uppercase; text-indent:.24em;
+  color:var(--text);
+}
+.when-where .dot{ color:var(--accent-2); letter-spacing:0; text-indent:0; }
+
+/* ---------- the details card ---------- */
+.card{
+  position:relative;
+  width:min(100%,34rem); margin:0 auto;
+  padding:clamp(2rem,7vw,3.2rem) clamp(1.3rem,6vw,2.6rem);
+  background:linear-gradient(180deg, rgba(var(--bg-3-rgb),.92), rgba(var(--bg-rgb),.92));
+  border:1px solid rgba(var(--accent-rgb),.30);
+  box-shadow:0 30px 70px -40px rgba(var(--veil-rgb),.9), inset 0 0 60px rgba(var(--accent-rgb),.045);
+  overflow:hidden;
+}
+.card-jaali{ position:absolute; inset:0; opacity:.05; pointer-events:none; }
+.card-jaali svg{ width:100%; height:100%; }
+.card > *{ position:relative; }
+.card::before,.card::after{
+  content:""; position:absolute; width:18px; height:18px; border:1px solid var(--accent); opacity:.75;
+}
+.card::before{ top:9px; left:9px; border-right:0; border-bottom:0; }
+.card::after{ bottom:9px; right:9px; border-left:0; border-top:0; }
+
+.rows{ list-style:none; margin:0; padding:0; }
+.rows li{ padding:clamp(.9rem,3vw,1.15rem) 0; border-bottom:1px solid rgba(var(--accent-rgb),.16); }
+.rows li:last-child{ border-bottom:0; }
+.rows .k{
+  display:block; font-family:var(--title);
+  font-size:clamp(.55rem,2.4vw,.66rem); letter-spacing:.34em;
+  text-transform:uppercase; text-indent:.34em; color:var(--accent); margin-bottom:.4rem;
+}
+.rows .v{
+  display:block; font-family:var(--display); font-weight:400;
+  font-size:clamp(1.15rem,4.6vw,1.5rem); line-height:1.35; color:var(--text);
+}
+.rows .v small{
+  display:block; font-family:var(--body); font-size:.62em;
+  letter-spacing:.06em; color:var(--text-faint); margin-top:.25rem; line-height:1.6;
+}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.7rem;
+  padding:clamp(.85rem,3.2vw,1.05rem) clamp(1.6rem,6vw,2.4rem);
+  font-family:var(--title);
+  font-size:clamp(.62rem,2.6vw,.74rem);
+  letter-spacing:.3em; text-transform:uppercase; text-indent:.3em;
+  color:var(--accent-lt); text-decoration:none;
+  border:1px solid rgba(var(--accent-rgb),.5); background:transparent;
+  position:relative; overflow:hidden; cursor:pointer;
+  transition:color .45s var(--ease), border-color .45s var(--ease);
+}
+.btn span{ position:relative; z-index:1; display:inline-flex; align-items:center; gap:.6rem; }
+.btn::before{
+  content:""; position:absolute; inset:0; background:var(--accent);
+  transform:scaleX(0); transform-origin:0 50%; transition:transform .5s var(--ease);
+}
+.btn:hover, .btn:focus-visible{ color:var(--bg); border-color:var(--accent); outline:none; }
+.btn:hover::before, .btn:focus-visible::before{ transform:scaleX(1); }
+.btn svg{ width:1em; height:1em; fill:currentColor; }
+.btn-ghost{
+  border-color:rgba(var(--accent-rgb),.28); color:var(--text-dim);
+  margin-top:clamp(1.4rem,4vh,2rem);
+}
+.btn-note{
+  display:block; margin-top:1.1rem; font-size:.74rem; letter-spacing:.1em;
+  color:var(--text-faint);
+}
+
+/* ---------- closing ---------- */
+.dua{
+  font-family:var(--arabic); font-size:clamp(1.15rem,5.4vw,1.9rem); line-height:2.05;
+  color:var(--accent-lt); margin:0 0 1.1rem;
+}
+.dua-en{
+  font-family:var(--display); font-style:italic;
+  font-size:clamp(1rem,4vw,1.3rem); line-height:1.7;
+  color:var(--text-dim); max-width:32rem; margin:0 auto;
+}
+.signoff{
+  font-family:var(--display); font-size:clamp(1.5rem,6.5vw,2.4rem);
+  color:var(--text); margin:clamp(2rem,6vh,3rem) 0 0; letter-spacing:.02em;
+}
+.credit{
+  font-family:var(--title); font-size:clamp(.54rem,2.3vw,.62rem);
+  letter-spacing:.34em; text-transform:uppercase; text-indent:.34em;
+  color:rgba(var(--text-rgb),.26); margin-top:clamp(3rem,9vh,5rem);
+}
+
+/* ============================================================
+   SCROLL REVEALS — one shared motion language
+   ============================================================ */
+.js .reveal .r{
+  opacity:0; transform:translate3d(0,26px,0);
+  transition:opacity var(--reveal-t) var(--ease), transform var(--reveal-t) var(--ease);
+  transition-delay:calc(var(--i,0) * 120ms);
+  will-change:opacity,transform;
+}
+.reveal.in .r{ opacity:1; transform:none; }
+.reveal .r.r-scale{ transform:translate3d(0,18px,0) scale(.965); }
+.reveal.in .r.r-scale{ transform:none; }
+
+/* hero pieces are driven by the door sequence, not by the observer */
+.js .hero-content .r{ opacity:0; transform:translate3d(0,26px,0); }
+.hero-content.in .r{ opacity:1; transform:none; }
+
+/* Without JS there is nothing to open the doors with, so the gate stands
+   aside and the whole invitation reads as a plain, fully visible page. */
+html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display:none; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:480px){
+  :root{ --reveal-t:900ms; }
+  .door{ width:50.8vw; }
+  /* .finial mirrors every .arch height override in this file -- it uses
+     the same viewBox and centering as .arch specifically so its stem
+     lands exactly on the arch's peak (see the markup comment by .finial),
+     and that only holds if its height tracks .arch's at every breakpoint. */
+  .arch, .finial{ height:min(52vh,420px); }
+  .names{ font-size:clamp(2.6rem,15vw,4rem); }
+  .day-line{ flex-direction:column; gap:.2rem; }
+  .day-stack{ text-align:center; }
+  .day-num{ font-size:clamp(4.8rem,32vw,8rem); }
+  .when-where{ flex-direction:column; gap:.55rem; }
+  .when-where .dot{ display:none; }
+  .prompt{ bottom:clamp(2.5rem,10vh,5rem); }
+}
+@media (min-width:481px) and (max-width:1023px){
+  .arch, .finial{ height:min(58vh,540px); }
+}
+@media (min-width:1440px){
+  :root{ --maxw:68rem; }
+}
+@media (orientation:landscape) and (max-height:620px){
+  .arch, .finial{ height:min(76vh,440px); }
+  #hero{ padding-block:clamp(3rem,8vh,5rem); }
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{
+    animation-duration:.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:.2s !important;
+  }
+  .gate.is-open .door-l{ transform:rotateY(-102deg); }
+  .gate.is-open .door-r{ transform:rotateY(102deg); }
+  .rule .draw{ stroke-dashoffset:0; }
+}
+</style>
+</head>
+
+<body>
+<script>
+  /* Set the scroll lock from script, never from markup: if scripting is off
+     or blocked, the page must never open in a state only script can undo. */
+  document.documentElement.classList.add('js');
+  document.body.classList.add('is-locked');
+</script>
+
+<!-- ============================================================
+     SHARED SVG DEFINITIONS — jaali lattice + the mehrab arch.
+     Defined once, referenced by the doors, the background and the card.
+     ============================================================ -->
+<svg class="defs" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- open lattice, used as ambient texture -->
+    <pattern id="jaali" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <g fill="none" stroke-width="1.1">
+        <circle cx="0"  cy="0"  r="22"/>
+        <circle cx="64" cy="0"  r="22"/>
+        <circle cx="0"  cy="64" r="22"/>
+        <circle cx="64" cy="64" r="22"/>
+        <circle cx="32" cy="32" r="22"/>
+        <path d="M32 10 L54 32 L32 54 L10 32 Z"/>
+        <path d="M0 32 H64 M32 0 V64" stroke-opacity=".35"/>
+      </g>
+    </pattern>
+
+    <!-- tighter lattice, used inside the arch where the eye lingers -->
+    <pattern id="jaaliDense" width="36" height="36" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <g fill="none" stroke-width="1">
+        <circle cx="0"  cy="0"  r="12.5"/>
+        <circle cx="36" cy="0"  r="12.5"/>
+        <circle cx="0"  cy="36" r="12.5"/>
+        <circle cx="36" cy="36" r="12.5"/>
+        <circle cx="18" cy="18" r="12.5"/>
+        <path d="M18 5.5 L30.5 18 L18 30.5 L5.5 18 Z"/>
+      </g>
+    </pattern>
+
+    <!-- ogee (Mughal) arch, shared as outline and as clip -->
+    <path id="archPath" d="M46 604 L46 306 C46 202 96 124 162 82 C184 68 197 50 200 30 C203 50 216 68 238 82 C304 124 354 202 354 306 L354 604 Z"/>
+    <clipPath id="archClip"><use href="#archPath"/></clipPath>
+
+    <radialGradient id="archGlow" cx="50%" cy="46%" r="62%">
+      <stop class="glow-a" offset="0%"   stop-opacity=".22"/>
+      <stop class="glow-b" offset="60%"  stop-opacity=".07"/>
+      <stop class="glow-c" offset="100%" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- the couple's monogram: N and A upright in the display face, with an
+         ampersand between them styled exactly like the title's own "&" --
+         italic, smaller, the secondary accent colour -- so the mark reads
+         as one consistent piece of the same type system, not a one-off.
+         x positions are glyph-metric-derived (see the build notes) so the
+         group sits truly centred in the ring rather than eyeballed. Used
+         at the door seam, in the closing section, and as the basis for
+         the OG card and favicon. -->
+    <symbol id="monogram" viewBox="0 0 200 200">
+      <circle class="mono-ring" cx="100" cy="100" r="86"/>
+      <text class="mono-letter" x="71.15" y="102" text-anchor="middle" dominant-baseline="central">N</text>
+      <text class="mono-amp" x="100.3" y="102" text-anchor="middle" dominant-baseline="central">&amp;</text>
+      <text class="mono-letter" x="129.15" y="102" text-anchor="middle" dominant-baseline="central">A</text>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ambient background -->
+<div class="bg" aria-hidden="true">
+  <div class="bg-warm"></div>
+  <div class="bg-jaali"><svg><rect width="100%" height="100%" fill="url(#jaali)"/></svg></div>
+  <div class="bg-vignette"></div>
+</div>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============================================================
+     THE GATE — two jaali doors, closed until tapped
+     ============================================================ -->
+<div class="gate is-closed" id="gate">
+
+  <div class="doors" aria-hidden="true">
+    <div class="door door-l">
+      <div class="door-inner">
+        <svg class="door-fill" preserveAspectRatio="none"><rect width="100%" height="100%" fill="url(#jaali)"/></svg>
+        <div class="door-shade"></div>
+        <svg class="arch" viewBox="0 0 400 640">
+          <g clip-path="url(#archClip)">
+            <rect x="0" y="0" width="400" height="640" fill="url(#jaaliDense)" opacity=".55"/>
+            <rect x="0" y="0" width="400" height="640" fill="url(#archGlow)"/>
+          </g>
+          <use class="arch-outline" href="#archPath" fill="none" stroke-width="2.2"/>
+          <use class="arch-inline" href="#archPath" fill="none" stroke-width="1"
+               transform="translate(200,320) scale(.93) translate(-200,-320)"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="door door-r">
+      <div class="door-inner">
+        <svg class="door-fill" preserveAspectRatio="none"><rect width="100%" height="100%" fill="url(#jaali)"/></svg>
+        <div class="door-shade"></div>
+        <svg class="arch" viewBox="0 0 400 640">
+          <g clip-path="url(#archClip)">
+            <rect x="0" y="0" width="400" height="640" fill="url(#jaaliDense)" opacity=".55"/>
+            <rect x="0" y="0" width="400" height="640" fill="url(#archGlow)"/>
+          </g>
+          <use class="arch-outline" href="#archPath" fill="none" stroke-width="2.2"/>
+          <use class="arch-inline" href="#archPath" fill="none" stroke-width="1"
+               transform="translate(200,320) scale(.93) translate(-200,-320)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="seam" aria-hidden="true"></div>
+
+  <!-- The finial (dot + stem above the arch peak) used to be drawn twice,
+       once inside each door's own arch SVG -- two independently
+       3D-transformed layers (each door sits in its own perspective/rotateY
+       context) that are supposed to coincide exactly at the seam. Layout
+       measurements always showed them pixel-identical, but 3D-transformed
+       layers can still be GPU-composited with slightly different sub-pixel
+       snapping than each other, which getBoundingClientRect can't detect.
+       Drawing it once, here, outside either door's 3D context, removes
+       that whole class of discrepancy instead of relying on two copies
+       agreeing. Same viewBox and sizing as .arch, so it lands exactly
+       where the old per-door copies were meant to. -->
+  <!-- The stem now runs all the way down to y=30, the exact point where
+       the arch's own peak is drawn (see archPath: "...200 30..."). Each
+       door still draws that peak itself as part of its own clipped,
+       independently-composited copy of the arch, and the two copies can
+       apparently land a couple of pixels apart on some browsers/GPUs even
+       though they're mathematically identical -- this shared, guaranteed-
+       centered line now physically overlaps that junction, so whatever
+       gap exists underneath it is covered rather than left visible. -->
+  <svg class="finial" viewBox="0 0 400 640" aria-hidden="true">
+    <path class="arch-stem" d="M200 30 V0" stroke-width="1.4"/>
+    <circle class="arch-finial" cx="200" cy="18" r="4.5"/>
+  </svg>
+
+  <svg class="seal" viewBox="0 0 200 200" aria-hidden="true">
+    <circle class="seal-backdrop" cx="100" cy="100" r="92"/>
+    <use href="#monogram"/>
+  </svg>
+
+  <button class="prompt" id="gateBtn" type="button" aria-label="Open the invitation">
+    <span class="prompt-ring" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 20V7M12 7l-5 5M12 7l5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+    Tap to open
+  </button>
+</div>
+
+<main>
+
+  <!-- ==========================================================
+       1 — OPENING
+       ========================================================== -->
+  <section id="hero">
+    <div class="wrap hero-content" id="heroContent">
+      <p class="bismillah r" lang="ar" dir="rtl" style="--i:0">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+      <p class="bismillah-en r" style="--i:1">In the name of Allah, the Most Gracious, the Most Merciful</p>
+
+      <p class="eyebrow r" style="--i:2">The Nikah of</p>
+
+      <h1 class="names" id="heroNames">
+        <span class="line" data-split>Nida</span>
+        <span class="amp r" style="--i:3">&amp;</span>
+        <span class="line" data-split>Ajmal</span>
+      </h1>
+
+      <p class="surnames r" style="--i:4">Nida Farhat &nbsp;·&nbsp; Ajmal Khan</p>
+      <p class="hero-when r" style="--i:5">18 · 12 · 2026</p>
+    </div>
+
+    <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+      <span class="track"></span>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       2 — INVITATION LINE
+       ========================================================== -->
+  <section class="reveal" data-reveal>
+    <div class="wrap">
+      <svg class="motif r" style="--i:0" viewBox="0 0 60 60" aria-hidden="true">
+        <circle cx="30" cy="30" r="12"/>
+        <path d="M30 8 L52 30 L30 52 L8 30 Z"/>
+        <path d="M30 2 V10 M30 50 V58 M2 30 H10 M50 30 H58"/>
+      </svg>
+
+      <p class="lede r fam-line" style="--i:1">
+        <span class="fam" data-groom-family>[Groom&rsquo;s family name]</span>
+        <span class="fam-amp">&amp;</span>
+        <span class="fam" data-bride-family>[Bride&rsquo;s family name]</span>
+      </p>
+      <p class="lede r" style="--i:2">request the honour of your presence<br>at the Nikah of their children</p>
+
+      <svg class="rule r" style="--i:3" viewBox="0 0 400 24" aria-hidden="true">
+        <path class="draw" style="--len:190" d="M200 12 H14"/>
+        <path class="draw" style="--len:190" d="M200 12 H386"/>
+        <path class="draw" style="--len:70" d="M200 3 L209 12 L200 21 L191 12 Z"/>
+        <circle class="gem" cx="200" cy="12" r="2.2"/>
+      </svg>
+
+      <h2 class="section-title r r-scale" style="--i:4; font-size:clamp(2.2rem,9vw,4.4rem)">Nida <span style="color:var(--accent-2); font-style:italic">&amp;</span> Ajmal</h2>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       3 — THE ANNOUNCEMENT (date · time · place)
+       ========================================================== -->
+  <section class="reveal" data-reveal id="when">
+    <div class="wrap">
+      <p class="eyebrow r" style="--i:0">Save the date</p>
+
+      <div class="day-line r r-scale" style="--i:1">
+        <span class="day-num" id="dayNum" data-count-to="18">18<span class="day-sup">th</span></span>
+        <span class="day-stack">
+          <span class="day-month">December</span>
+          <span class="day-year">2026</span>
+        </span>
+      </div>
+
+      <svg class="rule r" style="--i:2" viewBox="0 0 400 24" aria-hidden="true">
+        <path class="draw" style="--len:190" d="M200 12 H14"/>
+        <path class="draw" style="--len:190" d="M200 12 H386"/>
+        <path class="draw" style="--len:70" d="M200 3 L209 12 L200 21 L191 12 Z"/>
+        <circle class="gem" cx="200" cy="12" r="2.2"/>
+      </svg>
+
+      <p class="when-where r" style="--i:3">
+        <span>6:00 in the evening</span>
+        <span class="dot" aria-hidden="true">&#10022;</span>
+        <span data-venue-city>Fatehpur</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       4 — THE DETAILS CARD
+       ========================================================== -->
+  <section class="reveal" data-reveal>
+    <div class="wrap">
+      <div class="card r r-scale" style="--i:0">
+        <div class="card-jaali" aria-hidden="true"><svg><rect width="100%" height="100%" fill="url(#jaaliDense)"/></svg></div>
+
+        <!-- Crescent + star, rebuilt from clean circle-subtraction geometry
+             (outer r=11, inner r=9.3 offset 4.6, tilted 25deg) instead of
+             the original arc path, whose inner/outer radii were too close
+             together to read as a moon -- it rendered as a circle with a
+             small notch bitten out, not a crescent. Verified by rendering
+             this exact point set before shipping it, since the old one
+             clearly never was. -->
+        <svg class="motif" viewBox="0 0 32.9 26" aria-hidden="true">
+          <path d="M22.36,18.75 L21.05,20.47 L19.45,21.89 L17.59,22.98 L15.56,23.68 L13.43,23.98 L11.28,23.85 L9.20,23.31 L7.27,22.38 L5.55,21.09 L4.11,19.49 L3.02,17.64 L2.31,15.61 L2.00,13.48 L2.11,11.33 L2.64,9.25 L3.57,7.31 L4.85,5.58 L6.45,4.14 L8.29,3.04 L10.32,2.32 L12.44,2.00 L14.59,2.10 L13.22,2.62 L11.95,3.33 L10.81,4.24 L9.83,5.32 L9.02,6.54 L8.42,7.86 L8.03,9.27 L7.86,10.72 L7.93,12.18 L8.22,13.61 L8.73,14.97 L9.45,16.24 L10.36,17.38 L11.43,18.37 L12.65,19.18 L13.98,19.78 L15.38,20.17 L16.83,20.34 L18.29,20.27 L19.72,19.98 L21.09,19.47 L22.36,18.75 Z"/>
+          <path d="M27.54,2.80 L28.46,5.28 L30.94,6.20 L28.46,7.12 L27.54,9.60 L26.62,7.12 L24.14,6.20 L26.62,5.28 Z"/>
+        </svg>
+
+        <p class="eyebrow" style="margin-bottom:1.4rem">The Details</p>
+
+        <ul class="rows">
+          <li>
+            <span class="k">Ceremony</span>
+            <span class="v">Nikah</span>
+          </li>
+          <li>
+            <span class="k">Day &amp; Date</span>
+            <span class="v">Friday, 18<sup>th</sup> December 2026</span>
+          </li>
+          <li>
+            <span class="k">Time</span>
+            <span class="v">6:00 PM onwards</span>
+          </li>
+          <li>
+            <span class="k">Venue</span>
+            <span class="v">
+              <span data-venue-name>To be announced</span>
+              <small data-venue-address>Fatehpur</small>
+            </span>
+          </li>
+        </ul>
+
+        <a class="btn btn-ghost" id="mapBtn" href="#" target="_blank" rel="noopener noreferrer">
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+            View on Map
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       5 — RSVP
+       ========================================================== -->
+  <section class="reveal" data-reveal id="rsvp">
+    <div class="wrap">
+      <h2 class="section-title r" style="--i:0; font-size:clamp(1.5rem,5.5vw,2.4rem); max-width:26rem; margin-left:auto; margin-right:auto; margin-bottom:clamp(1rem,3vh,1.6rem)">Your presence would mean the world to us.</h2>
+      <!-- Overriding .eyebrow's default bottom margin here: sitewide it leads
+           into a large element (e.g. the date number) and wants room to
+           breathe, but here it's a direct prompt into the button right
+           below it, so it should sit close to what it's pointing at rather
+           than closer to the heading above it. -->
+      <p class="eyebrow r" style="--i:1; margin-bottom:.5rem">Kindly Respond</p>
+
+      <p class="r" style="--i:2; margin-top:.5rem">
+        <a class="btn" id="rsvpBtn" href="#" target="_blank" rel="noopener noreferrer">
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6a11 11 0 0 1-4.2-3.9c-.3-.5-.7-1.1-.7-1.8 0-.7.4-1.1.6-1.3.2-.2.4-.3.6-.3h.4c.1 0 .3 0 .5.4l.7 1.6c0 .1.1.3 0 .4l-.3.4-.2.3c-.1.1-.2.2 0 .5.2.3.7 1.1 1.4 1.7.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.4 0 .8Z"/></svg>
+            RSVP on WhatsApp
+          </span>
+        </a>
+      </p>
+      <small class="btn-note r" style="--i:3">Please respond by 15<sup>th</sup> October 2026</small>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       6 — CLOSING
+       ========================================================== -->
+  <section class="reveal" data-reveal id="closing">
+    <div class="wrap">
+      <p class="dua r" style="--i:0" lang="ar" dir="rtl">جَزَاكُمُ اللَّهُ خَيْرًا وَبَارَكَ اللَّهُ فِيكُمْ</p>
+      <p class="dua-en r" style="--i:1">May Allah reward you with goodness,<br>and bless you all for sharing in our joy.</p>
+
+      <svg class="rule r" style="--i:2" viewBox="0 0 400 24" aria-hidden="true">
+        <path class="draw" style="--len:190" d="M200 12 H14"/>
+        <path class="draw" style="--len:190" d="M200 12 H386"/>
+        <path class="draw" style="--len:70" d="M200 3 L209 12 L200 21 L191 12 Z"/>
+        <circle class="gem" cx="200" cy="12" r="2.2"/>
+      </svg>
+
+      <svg class="motif r" style="--i:3; width:clamp(64px,18vw,92px)" viewBox="0 0 200 200" aria-hidden="true">
+        <use href="#monogram"/>
+      </svg>
+
+      <p class="signoff r" style="--i:4">With love, <em style="font-style:italic; color:var(--accent-lt)">Nida &amp; Ajmal</em></p>
+      <p class="credit r" style="--i:5">Fatehpur &nbsp;·&nbsp; 18 December 2026</p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* ============================================================
+   EDITABLE CONTENT — everything still to be confirmed lives here.
+   Change these values only; nothing below this block needs editing.
+   ============================================================ */
+const CONFIG = {
+  BRIDE_FAMILY : "Late Mohammad Farhat",
+
+  GROOM_FAMILY : "Mohammed Yusuf Khan",
+
+  VENUE_NAME   : "Jalsa Resort and Marriage Lawns",
+
+  /* No street address text confirmed yet -- MAP_URL below pins the exact
+     location on the map regardless. */
+  VENUE_ADDRESS: "Fatehpur, Uttar Pradesh",
+
+  /* City only — confirmed. Shown in the announcement section. */
+  VENUE_CITY   : "Fatehpur",
+
+  MAP_URL      : "https://maps.app.goo.gl/BEB6A5Ci7Qu2zwMu7",
+
+  RSVP_PHONE   : "918376877423",
+
+  /* PLACEHOLDER — fallback RSVP email, used only if RSVP_PHONE is empty. */
+  RSVP_EMAIL   : "",
+
+  /* Pre-filled message that opens in WhatsApp. */
+  RSVP_MESSAGE : "Assalamu Alaikum! Thank you for the invitation to Nida & Ajmal's Nikah. I would like to confirm my attendance."
+};
+
+/* ============================================================
+   Wire the editable values into the page
+   ============================================================ */
+(function applyConfig(){
+ try {
+  const set = (sel, val) => document.querySelectorAll(sel).forEach(el => { el.textContent = val; });
+
+  set('[data-bride-family]', CONFIG.BRIDE_FAMILY);
+  set('[data-groom-family]', CONFIG.GROOM_FAMILY);
+  set('[data-venue-name]',   CONFIG.VENUE_NAME);
+  set('[data-venue-address]',CONFIG.VENUE_ADDRESS);
+  set('[data-venue-city]',   CONFIG.VENUE_CITY);
+
+  // Map button — the exact pin when MAP_URL is set, otherwise a Maps search
+  // for the address, so the button is never a dead link.
+  const mapBtn = document.getElementById('mapBtn');
+  if (CONFIG.MAP_URL) {
+    mapBtn.href = CONFIG.MAP_URL;
+  } else {
+    const q = encodeURIComponent(CONFIG.VENUE_ADDRESS || CONFIG.VENUE_CITY);
+    mapBtn.href = 'https://www.google.com/maps/search/?api=1&query=' + q;
+  }
+
+  // RSVP button — WhatsApp when a number exists, else mailto, else a soft note.
+  const rsvpBtn = document.getElementById('rsvpBtn');
+  if (CONFIG.RSVP_PHONE) {
+    rsvpBtn.href = 'https://wa.me/' + CONFIG.RSVP_PHONE;
+  } else if (CONFIG.RSVP_EMAIL) {
+    rsvpBtn.href = 'mailto:' + CONFIG.RSVP_EMAIL
+                 + '?subject=' + encodeURIComponent('RSVP — Nikah of Nida & Ajmal')
+                 + '&body=' + encodeURIComponent(CONFIG.RSVP_MESSAGE);
+    rsvpBtn.removeAttribute('target');
+    rsvpBtn.querySelector('span').lastChild.textContent = ' RSVP by Email';
+  } else {
+    rsvpBtn.href = '#rsvp';
+    rsvpBtn.removeAttribute('target');
+  }
+ } catch (e) {
+  /* A typo in CONFIG must never be able to trap a guest behind closed doors. */
+  console.warn('Invitation config could not be applied:', e);
+ }
+})();
+
+/* ============================================================
+   Motion helpers
+   ============================================================ */
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// A reload or a back-navigation can otherwise hand the browser's own scroll
+// restoration an old offset before any of our code runs, so the page could
+// already be mid-scroll under the closed doors. Opening always starts fresh.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
+/* Split the two names into per-letter spans so they can cascade in. */
+document.querySelectorAll('[data-split]').forEach(el => {
+  const text = el.textContent.trim();
+  el.textContent = '';
+  [...text].forEach((ch, i) => {
+    const s = document.createElement('span');
+    s.className = 'ltr';
+    s.textContent = ch;
+    s.style.opacity = '0';
+    s.style.transform = 'translate3d(0,38px,0) rotate(3deg)';
+    s.style.transition = 'opacity 900ms var(--ease) ' + (i * 65) + 'ms, transform 1000ms var(--ease) ' + (i * 65) + 'ms';
+    el.appendChild(s);
+  });
+});
+
+function cascadeNames(delay){
+  const letters = document.querySelectorAll('#heroNames .ltr');
+  setTimeout(() => {
+    letters.forEach(s => {
+      s.style.opacity = '1';
+      s.style.transform = 'none';
+    });
+  }, reduced ? 0 : delay);
+}
+
+/* ============================================================
+   THE GATE — tap to open, then hand the page over to scroll
+   ============================================================ */
+(function gate(){
+  const gate     = document.getElementById('gate');
+  const btn      = document.getElementById('gateBtn');
+  const hero     = document.getElementById('heroContent');
+  const cue      = document.getElementById('scrollCue');
+  const progress = document.getElementById('progress');
+  let opened = false;
+
+  // If nobody taps, hint gently that this thing is alive.
+  const idle = setTimeout(() => { if (!opened) gate.classList.add('is-idle'); }, 3200);
+
+  function open(){
+    if (opened) return;
+    opened = true;
+    clearTimeout(idle);
+
+    // However the guest arrived at this load, the reveal behind the doors
+    // is always the top of the page — never mid-scroll from a restored
+    // position (browsers can reapply scroll on reload / back-navigation
+    // even while the body is scroll-locked).
+    window.scrollTo(0, 0);
+
+    gate.classList.remove('is-idle', 'is-closed');
+    gate.classList.add('is-open');
+
+    // Bismillah and the lines around it lift in while the doors are still moving.
+    setTimeout(() => hero.classList.add('in'), reduced ? 0 : 420);
+    cascadeNames(1000);
+
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.body.classList.remove('is-locked');
+      progress.classList.add('on');
+      cue.classList.add('on');
+
+      // Fade the gate out instead of cutting it with display:none: the
+      // spill glow behind the doors only ever fades IN (never back out), so
+      // by now it's sitting at full brightness -- an instant cut there was
+      // a visible flash from that bright glow down to the page's normal
+      // gradient. Fading first turns the cut into a smooth cross-fade.
+      let hidden = false;
+      const finishHide = () => {
+        if (hidden) return;
+        hidden = true;
+        gate.classList.add('is-gone');
+      };
+      gate.classList.add('is-hiding');
+      gate.addEventListener('transitionend', finishHide, { once: true });
+      setTimeout(finishHide, 900); // safety net if transitionend never fires
+    }, reduced ? 260 : 1900);
+  }
+
+  btn.addEventListener('click', open);
+  // A tap anywhere on the doors works too — the button is just the invitation.
+  gate.addEventListener('click', open);
+})();
+
+/* ============================================================
+   SCROLL REVEALS — same timing language in every section
+   ============================================================ */
+(function reveals(){
+  const sections = document.querySelectorAll('[data-reveal]');
+
+  if (!('IntersectionObserver' in window)) {
+    sections.forEach(s => s.classList.add('in'));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+      const counter = entry.target.querySelector('[data-count-to]');
+      if (counter) countUp(counter);
+    });
+  }, { threshold: 0.22, rootMargin: '0px 0px -8% 0px' });
+
+  sections.forEach(s => io.observe(s));
+})();
+
+/* The date number ticks up as it enters view. */
+function countUp(el){
+  const target = parseInt(el.dataset.countTo, 10);
+  const sup = el.querySelector('.day-sup');
+  const suffix = sup ? sup.outerHTML : '';
+  if (reduced) return;
+
+  // Two-digit padding keeps the glyph count fixed, so the line never reflows
+  // while it ticks up.
+  const pad = n => String(n).padStart(String(target).length, '0');
+
+  const dur = 900, start = performance.now();
+  function frame(now){
+    const p = Math.min((now - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const val = Math.max(1, Math.round(eased * target));
+    el.innerHTML = pad(val) + suffix;
+    if (p < 1) requestAnimationFrame(frame);
+  }
+  el.innerHTML = pad(1) + suffix;
+  requestAnimationFrame(frame);
+}
+
+/* ============================================================
+   Scroll progress hairline
+   ============================================================ */
+(function progressBar(){
+  const bar = document.getElementById('progress');
+  let ticking = false;
+
+  function update(){
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const p = max > 0 ? window.scrollY / max : 0;
+    bar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+})();
+</script>
+
+</body>
+</html>
