@@ -444,17 +444,25 @@ h2.section-title{
 .scroll-cue.on{ opacity:1; }
 .scroll-cue .track{
   width:1px; height:clamp(34px,7vh,54px); position:relative;
-  background:linear-gradient(180deg, rgba(var(--accent-rgb),.5), transparent);
+  /* Reversed from a top-down fade: the dot now travels bottom-to-top (see
+     @keyframes drip below) to match an actual upward swipe gesture, so
+     the brighter end of the line sits at the bottom, where the motion
+     starts, tapering off toward the top. */
+  background:linear-gradient(0deg, rgba(var(--accent-rgb),.5), transparent);
 }
 .scroll-cue .track::after{
   content:""; position:absolute; left:-2px; top:0; width:5px; height:5px;
   border-radius:50%; background:var(--accent-lt); box-shadow:0 0 10px var(--accent);
   animation:drip 2.4s var(--ease) infinite;
 }
+/* Scrolling down the page means swiping UP on a touchscreen -- the dot used
+   to travel top-to-bottom, which reads as "swipe down," the opposite of
+   the actual gesture. It now rises from the bottom of the track and fades
+   out at the top. */
 @keyframes drip{
-  0%{ transform:translateY(0); opacity:0; }
+  0%{ transform:translateY(clamp(34px,7vh,54px)); opacity:0; }
   25%{ opacity:1; }
-  100%{ transform:translateY(clamp(34px,7vh,54px)); opacity:0; }
+  100%{ transform:translateY(0); opacity:0; }
 }
 
 /* ---------- the announcement (date / time / place) ---------- */
