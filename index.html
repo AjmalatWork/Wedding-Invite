@@ -373,14 +373,19 @@ h2.section-title{
   color:var(--text-dim); max-width:34rem; margin:0 auto;
 }
 .fam{ color:var(--accent-lt); font-family:var(--display); font-size:1.28em; letter-spacing:.02em; }
-/* The two family names used to sit inline on one line, which meant the
+/* The family names used to sit inline on one line, which meant the
    browser was free to wrap wherever it liked -- on narrow phones that
    landed mid-word ("La-" / "-te Mohammad Farhat"). Stacking them
    deliberately, each on its own centred line with a small ampersand
-   between (the same treatment "Nida & Ajmal" already uses above), means
-   there's no line for a name to break across in the first place, at any
-   width -- not just a mobile-only patch. */
-.fam-line{ display:flex; flex-direction:column; align-items:center; gap:.3em; }
+   between the two sides (the same treatment "Nida & Ajmal" already uses
+   above), means there's no line for a name to break across in the first
+   place, at any width -- not just a mobile-only patch.
+   Each side now lists a father and mother as a .fam-pair: a tighter gap
+   within the pair groups the two parents visually, while the larger gap
+   on .fam-line (inherited around the pair and the ampersand) keeps the
+   bride's side and groom's side clearly separated. */
+.fam-line{ display:flex; flex-direction:column; align-items:center; gap:.4em; }
+.fam-pair{ display:flex; flex-direction:column; align-items:center; gap:.22em; }
 .fam-amp{
   display:block; font-style:italic; color:var(--accent-2);
   font-size:.55em; line-height:1;
@@ -834,9 +839,15 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
       </svg>
 
       <p class="lede r fam-line" style="--i:1">
-        <span class="fam" data-bride-family>[Bride&rsquo;s family name]</span>
+        <span class="fam-pair">
+          <span class="fam" data-bride-father>[Bride&rsquo;s father]</span>
+          <span class="fam" data-bride-mother>[Bride&rsquo;s mother]</span>
+        </span>
         <span class="fam-amp">&amp;</span>
-        <span class="fam" data-groom-family>[Groom&rsquo;s family name]</span>
+        <span class="fam-pair">
+          <span class="fam" data-groom-father>[Groom&rsquo;s father]</span>
+          <span class="fam" data-groom-mother>[Groom&rsquo;s mother]</span>
+        </span>
       </p>
       <p class="lede r" style="--i:2">request the honour of your presence<br>at the Nikah of their children</p>
 
@@ -991,9 +1002,11 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
    Change these values only; nothing below this block needs editing.
    ============================================================ */
 const CONFIG = {
-  BRIDE_FAMILY : "Late Mohammad Farhat",
+  BRIDE_FATHER : "Late Mohammad Farhat",
+  BRIDE_MOTHER : "Zahida Parveen",
 
-  GROOM_FAMILY : "Mohammed Yusuf Khan",
+  GROOM_FATHER : "Mohammed Yusuf Khan",
+  GROOM_MOTHER : "Ashma Begum",
 
   VENUE_NAME   : "Jalsa Resort and Marriage Lawns",
 
@@ -1022,8 +1035,10 @@ const CONFIG = {
  try {
   const set = (sel, val) => document.querySelectorAll(sel).forEach(el => { el.textContent = val; });
 
-  set('[data-bride-family]', CONFIG.BRIDE_FAMILY);
-  set('[data-groom-family]', CONFIG.GROOM_FAMILY);
+  set('[data-bride-father]', CONFIG.BRIDE_FATHER);
+  set('[data-bride-mother]', CONFIG.BRIDE_MOTHER);
+  set('[data-groom-father]', CONFIG.GROOM_FATHER);
+  set('[data-groom-mother]', CONFIG.GROOM_MOTHER);
   set('[data-venue-name]',   CONFIG.VENUE_NAME);
   set('[data-venue-address]',CONFIG.VENUE_ADDRESS);
   set('[data-venue-city]',   CONFIG.VENUE_CITY);
