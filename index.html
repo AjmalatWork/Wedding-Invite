@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-events="both">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ajmal &amp; Nida&rsquo;s Nikah Invitation</title>
-<meta name="description" content="You are invited to the Nikah of Ajmal Khan and Nida Farhat, on 18th December 2026 in Fatehpur.">
+<title>Ajmal &amp; Nida&rsquo;s Nikah and Walima Invitation</title>
+<meta name="description" content="You are invited to the Nikah of Ajmal Khan and Nida Farhat on 18th December 2026 in Fatehpur, and the Dawat-e-Walima on 20th December 2026 in Pratapgarh.">
 <meta name="theme-color" content="#2a0d13">
 
 <!-- Favicon: an N/A initial mark, inlined as an SVG data URI so the tab icon
@@ -18,20 +18,20 @@
      which is a harmless fallback, not a broken one. -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ccircle%20cx%3D%2750%27%20cy%3D%2750%27%20r%3D%2748%27%20fill%3D%27%23c9a44c%27%2F%3E%3Ctext%20x%3D%2731%27%20y%3D%2756%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27central%27%20font-family%3D%27Georgia%2C%20Times%20New%20Roman%2C%20serif%27%20font-style%3D%27italic%27%20font-weight%3D%27700%27%20font-size%3D%2740%27%20fill%3D%27%230d0c0a%27%3EA%3C%2Ftext%3E%3Ctext%20x%3D%2769%27%20y%3D%2756%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27central%27%20font-family%3D%27Georgia%2C%20Times%20New%20Roman%2C%20serif%27%20font-style%3D%27italic%27%20font-weight%3D%27700%27%20font-size%3D%2740%27%20fill%3D%27%230d0c0a%27%3EN%3C%2Ftext%3E%3C%2Fsvg%3E">
 
-<meta property="og:title" content="Ajmal &amp; Nida&rsquo;s Nikah Invitation">
-<meta property="og:description" content="18th December 2026 · 6:00 PM · Fatehpur">
+<meta property="og:title" content="Ajmal &amp; Nida&rsquo;s Nikah and Walima Invitation">
+<meta property="og:description" content="Nikah, 18th December, Fatehpur · Walima, 20th December, Pratapgarh">
 <meta property="og:type" content="website">
-<!-- PLACEHOLDER — ajmal-nida-og.png ships alongside this file. A relative
+<!-- PLACEHOLDER — the share-preview images ship alongside this file. A relative
      path resolves fine once both are hosted at the same origin; if you ever
      serve this page from a different path than the image, swap this for an
      absolute https:// URL instead, since WhatsApp/Facebook's scrapers fetch
      it directly rather than resolving it in a browser context. -->
-<meta property="og:image" content="ajmal-nida-og.png">
+<meta property="og:image" content="ajmal-nida-both-og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ajmal &amp; Nida&rsquo;s Nikah, 18th December 2026, Fatehpur">
+<meta property="og:image:alt" content="Ajmal &amp; Nida&rsquo;s Nikah on 18th December 2026 in Fatehpur and Walima on 20th December 2026 in Pratapgarh">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="ajmal-nida-og.png">
+<meta name="twitter:image" content="ajmal-nida-both-og.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,6 +136,20 @@ body.is-locked{ overflow:hidden; height:100%; touch-action:none; }
 
 img,svg{ max-width:100%; }
 ::selection{ background:rgba(var(--accent-rgb),.28); color:var(--text); }
+
+/* ============================================================
+   WHICH EVENTS THIS PAGE INVITES TO
+   One codebase serves three pages. <html data-events="..."> is the
+   only switch: "nikah", "walima" or "both". Anything marked
+   data-show="nikah both" (a list of modes) is shown only in those
+   modes and hidden otherwise. It is pure CSS, so there is no flash
+   and nothing to run, and each branch differs from the others by
+   this one attribute plus its share-preview text in <head>, which
+   keeps merging shared fixes between the branches painless.
+   ============================================================ */
+html[data-events="nikah"]  [data-show]:not([data-show~="nikah"]),
+html[data-events="walima"] [data-show]:not([data-show~="walima"]),
+html[data-events="both"]   [data-show]:not([data-show~="both"]){ display:none; }
 
 /* ============================================================
    AMBIENT BACKGROUND — jaali texture, warm depth, vignette
@@ -371,6 +385,14 @@ h2.section-title{
 .lede{
   font-size:clamp(.95rem,3.6vw,1.12rem);
   color:var(--text-dim); max-width:34rem; margin:0 auto;
+  text-wrap:balance;
+}
+/* the Walima-only page's one quiet line about the bride's parents, below
+   the names, set smaller and italic so it reads as a note, not a headline */
+.bride-line{
+  margin-top:clamp(1.2rem,3.5vh,1.8rem);
+  font-family:var(--display); font-style:italic;
+  font-size:clamp(1rem,3.8vw,1.25rem); line-height:1.6;
 }
 .fam{ color:var(--accent-lt); font-family:var(--display); font-size:1.28em; letter-spacing:.02em; }
 /* The family names used to sit inline on one line, which meant the
@@ -509,6 +531,35 @@ h2.section-title{
 }
 .when-where .dot{ color:var(--accent-2); letter-spacing:0; text-indent:0; }
 
+/* Combined page: two dates, side by side on a wide screen, stacked below.
+   The numbers are set smaller than on a single-date page so that two of
+   them can share a row, or a phone screen, without either dominating. */
+.dates{
+  display:grid; grid-template-columns:1fr; justify-items:center;
+  gap:clamp(2.4rem,7vh,3.4rem);
+}
+.date-item{ display:flex; flex-direction:column; align-items:center; gap:1.1rem; }
+.date-label{
+  margin:0; font-family:var(--title);
+  font-size:clamp(.6rem,2.5vw,.74rem);
+  letter-spacing:.44em; text-transform:uppercase; text-indent:.44em;
+  color:var(--accent);
+}
+.dates .day-num{ font-size:clamp(4.4rem,11vw,8rem); }
+.date-when{
+  margin:0; display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
+  gap:clamp(.6rem,2.4vw,1.2rem);
+  font-family:var(--title); font-size:clamp(.66rem,2.6vw,.84rem);
+  letter-spacing:.2em; text-transform:uppercase; text-indent:.2em;
+  color:var(--text);
+}
+.date-when .dot{ color:var(--accent-2); letter-spacing:0; text-indent:0; }
+@media (min-width:900px){
+  .dates{ grid-template-columns:1fr 1fr; align-items:start; gap:0; }
+  .date-item{ padding:0 clamp(1.5rem,4vw,3.5rem); }
+  .date-item + .date-item{ border-left:1px solid rgba(var(--accent-rgb),.22); }
+}
+
 /* ---------- the details card ---------- */
 .card{
   position:relative;
@@ -539,6 +590,7 @@ h2.section-title{
 .rows .v{
   display:block; font-family:var(--display); font-weight:400;
   font-size:clamp(1.15rem,4.6vw,1.5rem); line-height:1.35; color:var(--text);
+  text-wrap:balance;
 }
 .rows .v small{
   display:block; font-family:var(--body); font-size:.62em;
@@ -572,6 +624,15 @@ h2.section-title{
 .btn-note{
   display:block; margin-top:1.1rem; font-size:.74rem; letter-spacing:.1em;
   color:var(--text-faint);
+}
+/* the family members awaiting the guest, as on the printed card */
+.awaiting{ margin-top:clamp(2.8rem,8vh,4rem); }
+.awaiting .eyebrow{ margin-bottom:1rem; }
+.awaiting ul{
+  list-style:none; margin:0; padding:0;
+  display:flex; flex-direction:column; align-items:center; gap:.2em;
+  font-family:var(--display); font-size:clamp(1.05rem,4vw,1.3rem); line-height:1.5;
+  color:var(--text-dim);
 }
 
 /* ---------- closing ---------- */
@@ -628,6 +689,8 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
   .day-num{ font-size:clamp(4.8rem,32vw,8rem); }
   .when-where{ flex-direction:column; gap:.55rem; }
   .when-where .dot{ display:none; }
+  .date-when{ flex-direction:column; gap:.4rem; }
+  .date-when .dot{ display:none; }
   .prompt{ bottom:clamp(2.5rem,10vh,5rem); }
 }
 @media (min-width:481px) and (max-width:1023px){
@@ -817,7 +880,11 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
       <p class="bismillah r" lang="ar" dir="rtl" style="--i:0">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
       <p class="bismillah-en r" style="--i:1">In the name of Allah, the Most Gracious, the Most Merciful</p>
 
-      <p class="eyebrow r" style="--i:2">The Nikah of</p>
+      <p class="eyebrow r" style="--i:2">
+        <span data-show="nikah">The Nikah of</span>
+        <span data-show="walima">The Dawat-e-Walima of</span>
+        <span data-show="both">The Nikah &amp; Walima of</span>
+      </p>
 
       <h1 class="names" id="heroNames">
         <span class="line" data-split>Ajmal</span>
@@ -826,7 +893,11 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
       </h1>
 
       <p class="surnames r" style="--i:4">Ajmal Khan &nbsp;·&nbsp; Nida Farhat</p>
-      <p class="hero-when r" style="--i:5">18 · 12 · 2026</p>
+      <p class="hero-when r" style="--i:5">
+        <span data-show="nikah">18 · 12 · 2026</span>
+        <span data-show="walima">20 · 12 · 2026</span>
+        <span data-show="both">18 &amp; 20 · 12 · 2026</span>
+      </p>
     </div>
 
     <div class="scroll-cue" id="scrollCue" aria-hidden="true">
@@ -851,13 +922,21 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
           <span class="fam" data-groom-father>[Groom&rsquo;s father]</span>
           <span class="fam" data-groom-mother>[Groom&rsquo;s mother]</span>
         </span>
-        <span class="fam-amp">&amp;</span>
-        <span class="fam-pair">
+        <span class="fam-amp" data-show="nikah both">&amp;</span>
+        <span class="fam-pair" data-show="nikah both">
           <span class="fam" data-bride-father>[Bride&rsquo;s father]</span>
           <span class="fam" data-bride-mother>[Bride&rsquo;s mother]</span>
         </span>
       </p>
-      <p class="lede r" style="--i:2">request the honour of your presence<br>at the Nikah of their children</p>
+      <!-- The Nikah is hosted by the bride's family and the groom's family
+           joins in inviting; the Walima is hosted by the groom's family
+           alone. So both families are named on the Nikah and combined
+           pages, and only the groom's on the Walima-only page. -->
+      <p class="lede r" style="--i:2">request the honour of your presence<br>
+        <span data-show="nikah">at the Nikah of their children</span>
+        <span data-show="walima">at the Dawat-e-Walima celebrating the marriage of their son</span>
+        <span data-show="both">at the Nikah and Walima of their children</span>
+      </p>
 
       <svg class="rule r" style="--i:3" viewBox="0 0 400 24" aria-hidden="true">
         <path class="draw" style="--len:190" d="M200 12 H14"/>
@@ -867,6 +946,10 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
       </svg>
 
       <h2 class="section-title r r-scale" style="--i:4; font-size:clamp(2.2rem,9vw,4.4rem)">Ajmal <span style="color:var(--accent-2); font-style:italic">&amp;</span> Nida</h2>
+
+      <p class="lede r bride-line" data-show="walima" style="--i:5">
+        Nida, daughter of <span data-bride-mother>[Bride&rsquo;s mother]</span> and <span data-bride-father>[Bride&rsquo;s father]</span>
+      </p>
     </div>
   </section>
 
@@ -877,33 +960,82 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
     <div class="wrap">
       <p class="eyebrow r" style="--i:0">Save the date</p>
 
-      <div class="day-line r r-scale" style="--i:1">
-        <span class="day-num" id="dayNum" data-count-to="18">18<span class="day-sup">th</span></span>
+      <div class="day-line r r-scale" data-show="nikah" style="--i:1">
+        <span class="day-num" data-count-to="18">18<span class="day-sup">th</span></span>
         <span class="day-stack">
           <span class="day-month">December</span>
           <span class="day-year">2026</span>
         </span>
       </div>
 
-      <svg class="rule r" style="--i:2" viewBox="0 0 400 24" aria-hidden="true">
+      <div class="day-line r r-scale" data-show="walima" style="--i:1">
+        <span class="day-num" data-count-to="20">20<span class="day-sup">th</span></span>
+        <span class="day-stack">
+          <span class="day-month">December</span>
+          <span class="day-year">2026</span>
+        </span>
+      </div>
+
+      <!-- Combined page: the two events are two days apart and in two
+           different cities, so each gets its own date, label and place. -->
+      <div class="dates r" data-show="both" style="--i:1">
+        <div class="date-item">
+          <p class="date-label">Nikah</p>
+          <div class="day-line">
+            <span class="day-num" data-count-to="18">18<span class="day-sup">th</span></span>
+            <span class="day-stack">
+              <span class="day-month">December</span>
+              <span class="day-year">2026</span>
+            </span>
+          </div>
+          <p class="date-when">
+            <span>6:00 in the evening</span>
+            <span class="dot" aria-hidden="true">&#10022;</span>
+            <span data-venue-city>Fatehpur</span>
+          </p>
+        </div>
+        <div class="date-item">
+          <p class="date-label">Dawat-e-Walima</p>
+          <div class="day-line">
+            <span class="day-num" data-count-to="20">20<span class="day-sup">th</span></span>
+            <span class="day-stack">
+              <span class="day-month">December</span>
+              <span class="day-year">2026</span>
+            </span>
+          </div>
+          <p class="date-when">
+            <span>Lunch at 12:30 PM</span>
+            <span class="dot" aria-hidden="true">&#10022;</span>
+            <span data-walima-city>Pratapgarh</span>
+          </p>
+        </div>
+      </div>
+
+      <svg class="rule r" data-show="nikah walima" style="--i:2" viewBox="0 0 400 24" aria-hidden="true">
         <path class="draw" style="--len:190" d="M200 12 H14"/>
         <path class="draw" style="--len:190" d="M200 12 H386"/>
         <path class="draw" style="--len:70" d="M200 3 L209 12 L200 21 L191 12 Z"/>
         <circle class="gem" cx="200" cy="12" r="2.2"/>
       </svg>
 
-      <p class="when-where r" style="--i:3">
+      <p class="when-where r" data-show="nikah" style="--i:3">
         <span>6:00 in the evening</span>
         <span class="dot" aria-hidden="true">&#10022;</span>
         <span data-venue-city>Fatehpur</span>
+      </p>
+      <p class="when-where r" data-show="walima" style="--i:3">
+        <span>Lunch at 12:30 PM</span>
+        <span class="dot" aria-hidden="true">&#10022;</span>
+        <span data-walima-city>Pratapgarh</span>
       </p>
     </div>
   </section>
 
   <!-- ==========================================================
-       4 — THE DETAILS CARD
+       4 — THE DETAILS CARDS
+       One card per event; each page shows the ones it invites to.
        ========================================================== -->
-  <section class="reveal" data-reveal>
+  <section class="reveal" data-reveal data-show="nikah both">
     <div class="wrap">
       <div class="card r r-scale" style="--i:0">
         <div class="card-jaali" aria-hidden="true"><svg><rect width="100%" height="100%" fill="url(#jaaliDense)"/></svg></div>
@@ -920,7 +1052,10 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
           <path d="M27.54,2.80 L28.46,5.28 L30.94,6.20 L28.46,7.12 L27.54,9.60 L26.62,7.12 L24.14,6.20 L26.62,5.28 Z"/>
         </svg>
 
-        <p class="eyebrow" style="margin-bottom:1.4rem">The Details</p>
+        <p class="eyebrow" style="margin-bottom:1.4rem">
+          <span data-show="nikah">The Details</span>
+          <span data-show="both">The Nikah</span>
+        </p>
 
         <ul class="rows">
           <li>
@@ -942,9 +1077,70 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
               <small data-venue-address>Fatehpur</small>
             </span>
           </li>
+          <li>
+            <span class="k">Baraat</span>
+            <span class="v">
+              Friday, 18<sup>th</sup> December, 12:00 noon
+              <small>From Eidgah Road, Bhuliapur, Pratapgarh to <span data-venue-name>Jalsa Resort and Marriage Lawns</span>, Fatehpur</small>
+            </span>
+          </li>
         </ul>
 
         <a class="btn btn-ghost" id="mapBtn" href="#" target="_blank" rel="noopener noreferrer">
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+            View on Map
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Walima card: same card, its own date, place and map. On the
+       combined page it also names the host, since the Walima is hosted by
+       the groom's family alone while the Nikah is not. -->
+  <section class="reveal" data-reveal data-show="walima both">
+    <div class="wrap">
+      <div class="card r r-scale" style="--i:0">
+        <div class="card-jaali" aria-hidden="true"><svg><rect width="100%" height="100%" fill="url(#jaaliDense)"/></svg></div>
+
+        <svg class="motif" viewBox="0 0 32.9 26" aria-hidden="true">
+          <path d="M22.36,18.75 L21.05,20.47 L19.45,21.89 L17.59,22.98 L15.56,23.68 L13.43,23.98 L11.28,23.85 L9.20,23.31 L7.27,22.38 L5.55,21.09 L4.11,19.49 L3.02,17.64 L2.31,15.61 L2.00,13.48 L2.11,11.33 L2.64,9.25 L3.57,7.31 L4.85,5.58 L6.45,4.14 L8.29,3.04 L10.32,2.32 L12.44,2.00 L14.59,2.10 L13.22,2.62 L11.95,3.33 L10.81,4.24 L9.83,5.32 L9.02,6.54 L8.42,7.86 L8.03,9.27 L7.86,10.72 L7.93,12.18 L8.22,13.61 L8.73,14.97 L9.45,16.24 L10.36,17.38 L11.43,18.37 L12.65,19.18 L13.98,19.78 L15.38,20.17 L16.83,20.34 L18.29,20.27 L19.72,19.98 L21.09,19.47 L22.36,18.75 Z"/>
+          <path d="M27.54,2.80 L28.46,5.28 L30.94,6.20 L28.46,7.12 L27.54,9.60 L26.62,7.12 L24.14,6.20 L26.62,5.28 Z"/>
+        </svg>
+
+        <p class="eyebrow" style="margin-bottom:1.4rem">
+          <span data-show="walima">The Details</span>
+          <span data-show="both">The Dawat-e-Walima</span>
+        </p>
+
+        <ul class="rows">
+          <li>
+            <span class="k">Ceremony</span>
+            <span class="v">Dawat-e-Walima</span>
+          </li>
+          <li data-show="both">
+            <span class="k">Hosted by</span>
+            <span class="v"><span data-groom-father>[Groom&rsquo;s father]</span> &amp; <span data-groom-mother>[Groom&rsquo;s mother]</span></span>
+          </li>
+          <li>
+            <span class="k">Day &amp; Date</span>
+            <span class="v">Sunday, 20<sup>th</sup> December 2026</span>
+          </li>
+          <li>
+            <span class="k">Time</span>
+            <span class="v">Lunch at 12:30 PM</span>
+          </li>
+          <li>
+            <span class="k">Venue</span>
+            <span class="v">
+              <span data-walima-venue-name>Plaza Palace</span>
+              <small data-walima-venue-address>Pratapgarh</small>
+            </span>
+          </li>
+        </ul>
+
+        <a class="btn btn-ghost" id="mapBtnWalima" href="#" target="_blank" rel="noopener noreferrer">
           <span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
             View on Map
@@ -976,6 +1172,21 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
         </a>
       </p>
       <small class="btn-note r" style="--i:3">Please respond at your earliest convenience</small>
+
+      <!-- The family members named on the printed card, shown the way the
+           card does: as the people awaiting the guest. -->
+      <div class="awaiting r" style="--i:4">
+        <p class="eyebrow">Awaiting your presence</p>
+        <ul>
+          <li>Mohammad Arshad Khan</li>
+          <li>Nahid Jamal Khan</li>
+          <li>Mohammad Fahad Khan</li>
+          <li>Nida Khan</li>
+          <li>Alina Khan</li>
+          <li>Ruhaan Khan</li>
+          <li>Ibrahim Khan</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -998,7 +1209,11 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
         <use href="#monogram"/>
       </svg>
 
-      <p class="credit r" style="--i:4">Fatehpur &nbsp;·&nbsp; 18 December 2026</p>
+      <p class="credit r" style="--i:4">
+        <span data-show="nikah">Fatehpur &nbsp;·&nbsp; 18 December 2026</span>
+        <span data-show="walima">Pratapgarh &nbsp;·&nbsp; 20 December 2026</span>
+        <span data-show="both">Fatehpur &nbsp;·&nbsp; 18 December 2026<br>Pratapgarh &nbsp;·&nbsp; 20 December 2026</span>
+      </p>
     </div>
   </section>
 
@@ -1027,7 +1242,15 @@ const CONFIG = {
 
   MAP_URL      : "https://maps.app.goo.gl/BEB6A5Ci7Qu2zwMu7",
 
-  RSVP_PHONE   : "918376877423",
+  /* Dawat-e-Walima: Sunday 20 December 2026, in the groom's hometown. */
+  WALIMA_VENUE_NAME   : "Plaza Palace",
+  WALIMA_VENUE_ADDRESS: "Near Bhangwa Chungi, Pratapgarh, Uttar Pradesh",
+  WALIMA_CITY         : "Pratapgarh",
+  WALIMA_MAP_URL      : "https://maps.app.goo.gl/n6wrJ1213twKWrBZ8",
+
+  /* RSVP goes to Mohammed Yusuf Khan on every Ajmal-first page (the
+     Nida-first page on master uses a different number). */
+  RSVP_PHONE   : "917388953314",
 
   /* PLACEHOLDER — fallback RSVP email, used only if RSVP_PHONE is empty. */
   RSVP_EMAIL   : "",
@@ -1050,6 +1273,10 @@ const CONFIG = {
   set('[data-venue-name]',   CONFIG.VENUE_NAME);
   set('[data-venue-address]',CONFIG.VENUE_ADDRESS);
   set('[data-venue-city]',   CONFIG.VENUE_CITY);
+  set('[data-walima-venue-name]',    CONFIG.WALIMA_VENUE_NAME);
+  set('[data-walima-venue-address]', CONFIG.WALIMA_VENUE_ADDRESS);
+  set('[data-walima-city]',          CONFIG.WALIMA_CITY);
+  document.getElementById('mapBtnWalima').href = CONFIG.WALIMA_MAP_URL;
 
   // Map button — the exact pin when MAP_URL is set, otherwise a Maps search
   // for the address, so the button is never a dead link.
@@ -1193,8 +1420,11 @@ function cascadeNames(delay){
       if (!entry.isIntersecting) return;
       entry.target.classList.add('in');
       io.unobserve(entry.target);
-      const counter = entry.target.querySelector('[data-count-to]');
-      if (counter) countUp(counter);
+      // A page can hold more than one date number (the combined page has
+      // two); count each one that's actually showing.
+      entry.target.querySelectorAll('[data-count-to]').forEach(counter => {
+        if (counter.offsetParent !== null) countUp(counter);
+      });
     });
   }, { threshold: 0.22, rootMargin: '0px 0px -8% 0px' });
 
