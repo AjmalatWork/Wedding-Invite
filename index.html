@@ -893,10 +893,11 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
       </h1>
 
       <p class="surnames r" style="--i:4">Ajmal Khan &nbsp;·&nbsp; Nida Farhat</p>
-      <p class="hero-when r" style="--i:5">
+      <!-- No date line on the combined page: its two dates are shown in
+           full a scroll later, so this spot is left empty there. -->
+      <p class="hero-when r" data-show="nikah walima" style="--i:5">
         <span data-show="nikah">18 · 12 · 2026</span>
         <span data-show="walima">20 · 12 · 2026</span>
-        <span data-show="both">18 &amp; 20 · 12 · 2026</span>
       </p>
     </div>
 
@@ -932,10 +933,10 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
            joins in inviting; the Walima is hosted by the groom's family
            alone. So both families are named on the Nikah and combined
            pages, and only the groom's on the Walima-only page. -->
-      <p class="lede r" style="--i:2">request the honour of your presence<br>
-        <span data-show="nikah">at the Nikah of their children</span>
-        <span data-show="walima">at the Dawat-e-Walima celebrating the marriage of their son</span>
-        <span data-show="both">at the Nikah and Walima of their children</span>
+      <p class="lede r" style="--i:2">
+        <span data-show="nikah">request the honour of your presence<br>at the Nikah of their children</span>
+        <span data-show="walima">request the honour of your presence at the<br>Dawat-e-Walima<br>celebrating the marriage of their son</span>
+        <span data-show="both">request the honour of your presence<br>at the Nikah and Walima of their children</span>
       </p>
 
       <svg class="rule r" style="--i:3" viewBox="0 0 400 24" aria-hidden="true">
@@ -945,10 +946,10 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
         <circle class="gem" cx="200" cy="12" r="2.2"/>
       </svg>
 
-      <h2 class="section-title r r-scale" style="--i:4; font-size:clamp(2.2rem,9vw,4.4rem)">Ajmal <span style="color:var(--accent-2); font-style:italic">&amp;</span> Nida</h2>
+      <h2 class="section-title r r-scale" style="--i:4; font-size:clamp(2.2rem,9vw,4.4rem)">Ajmal <span data-show="nikah both" style="color:var(--accent-2); font-style:italic">&amp;</span><span data-show="walima" style="color:var(--accent-2); font-style:italic">with</span> Nida</h2>
 
       <p class="lede r bride-line" data-show="walima" style="--i:5">
-        Nida, daughter of <span data-bride-mother>[Bride&rsquo;s mother]</span> and <span data-bride-father>[Bride&rsquo;s father]</span>
+        D/o <span data-bride-mother>[Bride&rsquo;s mother]</span> and <span data-bride-father>[Bride&rsquo;s father]</span>
       </p>
     </div>
   </section>
@@ -1096,9 +1097,7 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
     </div>
   </section>
 
-  <!-- The Walima card: same card, its own date, place and map. On the
-       combined page it also names the host, since the Walima is hosted by
-       the groom's family alone while the Nikah is not. -->
+  <!-- The Walima card: same card, its own date, place and map. -->
   <section class="reveal" data-reveal data-show="walima both">
     <div class="wrap">
       <div class="card r r-scale" style="--i:0">
@@ -1118,10 +1117,6 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
           <li>
             <span class="k">Ceremony</span>
             <span class="v">Dawat-e-Walima</span>
-          </li>
-          <li data-show="both">
-            <span class="k">Hosted by</span>
-            <span class="v"><span data-groom-father>[Groom&rsquo;s father]</span> &amp; <span data-groom-mother>[Groom&rsquo;s mother]</span></span>
           </li>
           <li>
             <span class="k">Day &amp; Date</span>
