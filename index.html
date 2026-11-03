@@ -96,6 +96,15 @@
 
   --pad: clamp(1.25rem, 5vw, 4rem);
   --maxw: 62rem;
+
+  /* Gate layout: the arch is sized/placed from the space left above the
+     "Tap to open" button, so the two can never overlap on short viewports
+     (e.g. 13" laptops at 125-150% scaling). Overridden per breakpoint. */
+  --prompt-bottom: clamp(1.5rem,8vh,8rem);
+  --prompt-h: 8rem;
+  --prompt-clear: calc(var(--prompt-bottom) + var(--prompt-h) + .75rem);
+  --arch-h: min(66vh, 620px, calc(100svh - var(--prompt-clear) - 1.5rem));
+  --arch-cy: min(50svh, calc(100svh - var(--prompt-clear) - var(--arch-h) / 2));
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -232,9 +241,9 @@ html[data-events="both"]   [data-show]:not([data-show~="both"]){ display:none; }
 .gate.is-open .door::after{ opacity:.55; }
 
 .arch{
-  position:absolute; left:50%; top:50%;
+  position:absolute; left:50%; top:var(--arch-cy);
   transform:translate(-50%,-50%);
-  height:min(66vh, 620px); width:auto;
+  height:var(--arch-h); width:auto;
   filter:drop-shadow(0 0 18px rgba(var(--accent-rgb),.14));
 }
 
@@ -252,7 +261,7 @@ html[data-events="both"]   [data-show]:not([data-show~="both"]){ display:none; }
    matching fade -- .seam's own rule above is untouched -- so it dissolves
    alongside the seam glow the instant the doors start to move. */
 .seal{
-  position:absolute; left:50%; top:50%; z-index:3; pointer-events:none;
+  position:absolute; left:50%; top:var(--arch-cy); z-index:3; pointer-events:none;
   width:clamp(56px,14vw,84px); height:auto;
   transform:translate(-50%,-50%);
   filter:drop-shadow(0 0 10px rgba(var(--accent-rgb),.35));
@@ -273,8 +282,8 @@ html[data-events="both"]   [data-show]:not([data-show~="both"]){ display:none; }
    copies did -- see the markup comment for why this is one element now
    instead of two. Fades with the seam/seal on open. */
 .finial{
-  position:absolute; left:50%; top:50%; z-index:3; pointer-events:none;
-  height:min(66vh,620px); width:auto;
+  position:absolute; left:50%; top:var(--arch-cy); z-index:3; pointer-events:none;
+  height:var(--arch-h); width:auto;
   transform:translate(-50%,-50%);
   transition:opacity .55s var(--ease);
 }
@@ -282,7 +291,7 @@ html[data-events="both"]   [data-show]:not([data-show~="both"]){ display:none; }
 
 /* tap prompt */
 .prompt{
-  position:absolute; z-index:3; left:50%; bottom:clamp(3.5rem,12vh,8rem);
+  position:absolute; z-index:3; left:50%; bottom:var(--prompt-bottom);
   transform:translateX(-50%);
   display:flex; flex-direction:column; align-items:center; gap:.9rem;
   background:none; border:0; padding:1rem 1.6rem; cursor:pointer;
@@ -682,7 +691,7 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
      the same viewBox and centering as .arch specifically so its stem
      lands exactly on the arch's peak (see the markup comment by .finial),
      and that only holds if its height tracks .arch's at every breakpoint. */
-  .arch, .finial{ height:min(52vh,420px); }
+  :root{ --prompt-bottom:clamp(2.5rem,10vh,5rem); --arch-h:min(52vh,420px,calc(100svh - var(--prompt-clear) - 1.5rem)); }
   .names{ font-size:clamp(2.6rem,15vw,4rem); }
   .day-line{ flex-direction:column; gap:.2rem; }
   .day-stack{ text-align:center; }
@@ -691,17 +700,23 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
   .when-where .dot{ display:none; }
   .date-when{ flex-direction:column; gap:.4rem; }
   .date-when .dot{ display:none; }
-  .prompt{ bottom:clamp(2.5rem,10vh,5rem); }
 }
 @media (min-width:481px) and (max-width:1023px){
-  .arch, .finial{ height:min(58vh,540px); }
+  :root{ --arch-h:min(58vh,540px,calc(100svh - var(--prompt-clear) - 1.5rem)); }
 }
 @media (min-width:1440px){
   :root{ --maxw:68rem; }
 }
 @media (orientation:landscape) and (max-height:620px){
-  .arch, .finial{ height:min(76vh,440px); }
+  :root{ --arch-h:min(76vh,440px,calc(100svh - var(--prompt-clear) - 1.5rem)); }
   #hero{ padding-block:clamp(3rem,8vh,5rem); }
+}
+
+/* short viewports: compact the prompt so the arch keeps more room */
+@media (max-height:800px){
+  :root{ --prompt-h:6rem; }
+  .prompt{ padding:.5rem 1.6rem; gap:.6rem; }
+  .prompt-ring{ width:48px; height:48px; }
 }
 
 @media (prefers-reduced-motion:reduce){
