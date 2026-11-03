@@ -100,6 +100,11 @@
   /* Gate layout: the arch is sized/placed from the space left above the
      "Tap to open" button, so the two can never overlap on short viewports
      (e.g. 13" laptops at 125-150% scaling). Overridden per breakpoint. */
+  /* Scroll cue footprint, reserved as hero bottom padding so the cue
+     never lands on top of the date/venue lines on short viewports. */
+  --cue-bottom: clamp(1.5rem,5vh,2.6rem);
+  --cue-track: clamp(34px,7vh,54px);
+  --cue-reserve: calc(var(--cue-bottom) + var(--cue-track) + 4.25rem);
   --prompt-bottom: clamp(1.5rem,8vh,8rem);
   --prompt-h: 8rem;
   --prompt-clear: calc(var(--prompt-bottom) + var(--prompt-h) + .75rem);
@@ -332,7 +337,7 @@ section{
 }
 .wrap{ width:100%; max-width:var(--maxw); margin:0 auto; }
 
-#hero{ min-height:100vh; min-height:100svh; padding-block:clamp(4rem,10vh,7rem); }
+#hero{ min-height:100vh; min-height:100svh; padding-block:clamp(4rem,10vh,7rem) max(clamp(4rem,10vh,7rem), var(--cue-reserve)); }
 
 /* ---------- typography ---------- */
 .bismillah{
@@ -443,7 +448,7 @@ h2.section-title{
   margin:clamp(1.6rem,5vh,2.4rem) 0 0;
 }
 .scroll-cue{
-  position:absolute; left:50%; bottom:clamp(1.5rem,5vh,2.6rem);
+  position:absolute; left:50%; bottom:var(--cue-bottom);
   transform:translateX(-50%);
   display:flex; flex-direction:column; align-items:center; gap:.7rem;
   font-family:var(--title); font-size:.58rem; letter-spacing:.36em;
@@ -452,7 +457,7 @@ h2.section-title{
 }
 .scroll-cue.on{ opacity:1; }
 .scroll-cue .track{
-  width:1px; height:clamp(34px,7vh,54px); position:relative;
+  width:1px; height:var(--cue-track); position:relative;
   /* Reversed from a top-down fade: the dot now travels bottom-to-top (see
      @keyframes drip below) to match an actual upward swipe gesture, so
      the brighter end of the line sits at the bottom, where the motion
@@ -469,7 +474,7 @@ h2.section-title{
    the actual gesture. It now rises from the bottom of the track and fades
    out at the top. */
 @keyframes drip{
-  0%{ transform:translateY(clamp(34px,7vh,54px)); opacity:0; }
+  0%{ transform:translateY(var(--cue-track)); opacity:0; }
   25%{ opacity:1; }
   100%{ transform:translateY(0); opacity:0; }
 }
@@ -646,7 +651,7 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
 }
 @media (orientation:landscape) and (max-height:620px){
   :root{ --arch-h:min(76vh,440px,calc(100svh - var(--prompt-clear) - 1.5rem)); }
-  #hero{ padding-block:clamp(3rem,8vh,5rem); }
+  #hero{ padding-block:clamp(3rem,8vh,5rem) max(clamp(3rem,8vh,5rem), var(--cue-reserve)); }
 }
 
 /* short viewports: compact the prompt so the arch keeps more room */
