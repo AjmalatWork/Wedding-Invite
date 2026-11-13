@@ -1053,7 +1053,7 @@ const CONFIG = {
   RSVP_EMAIL   : "",
 
   /* Pre-filled message that opens in WhatsApp. */
-  RSVP_MESSAGE : "Assalamu Alaikum! Thank you for the invitation to Ajmal & Nida's Nikah. I would like to confirm my attendance."
+  RSVP_MESSAGE : "Hello! I’m RSVPing for the wedding.\n\nName:\nAttending: Yes/No"
 };
 
 /* ============================================================
@@ -1084,7 +1084,8 @@ const CONFIG = {
   // RSVP button — WhatsApp when a number exists, else mailto, else a soft note.
   const rsvpBtn = document.getElementById('rsvpBtn');
   if (CONFIG.RSVP_PHONE) {
-    rsvpBtn.href = 'https://wa.me/' + CONFIG.RSVP_PHONE;
+    rsvpBtn.href = 'https://wa.me/' + CONFIG.RSVP_PHONE
+                 + '?text=' + encodeURIComponent(CONFIG.RSVP_MESSAGE);
   } else if (CONFIG.RSVP_EMAIL) {
     rsvpBtn.href = 'mailto:' + CONFIG.RSVP_EMAIL
                  + '?subject=' + encodeURIComponent('RSVP for Ajmal & Nida’s Nikah')
