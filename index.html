@@ -302,16 +302,44 @@ img,svg{ max-width:100%; }
   background:rgba(var(--veil-rgb),.55);
   display:grid; place-items:center; position:relative;
 }
-.prompt-ring::before{
-  content:""; position:absolute; inset:-9px; border-radius:50%;
-  border:1px solid rgba(var(--accent-rgb),.22);
-  animation:halo 3.4s var(--ease) infinite;
+/* Press ripple: a glowing centre dot that dips as if pressed, then rings
+   expand outward from it. Direction-neutral on purpose (no arrow, no finger)
+   so it reads as "press here" for a tap or a mouse click alike. */
+.prompt-ring{ transition:border-color .35s var(--ease), box-shadow .35s var(--ease); }
+.prompt-dot{
+  position:absolute; left:50%; top:50%; width:9px; height:9px; margin:-4.5px 0 0 -4.5px;
+  border-radius:50%; background:var(--accent-lt);
+  box-shadow:0 0 12px 2px rgba(var(--accent-lt-rgb),.55);
+  animation:pdip 3s var(--ease) infinite;
 }
-.prompt-ring svg{ width:44%; height:44%; fill:none; stroke:var(--accent-lt); stroke-width:1.4; }
-@keyframes halo{
-  0%{ transform:scale(.9); opacity:0; }
-  35%{ opacity:.9; }
-  100%{ transform:scale(1.5); opacity:0; }
+.prompt-wave{
+  position:absolute; inset:0; border-radius:50%; pointer-events:none;
+  border:1px solid rgba(var(--accent-lt-rgb),.85);
+  opacity:0; transform:scale(.18);
+  animation:pulse 3s cubic-bezier(.2,.6,.3,1) infinite;
+}
+.prompt-wave.w2{ animation-delay:.45s; }
+.prompt-wave.w3{ animation-delay:.9s; }
+@keyframes pulse{
+  0%{ opacity:0; transform:scale(.18); }
+  12%{ opacity:.9; }
+  70%{ opacity:0; transform:scale(1.45); }
+  100%{ opacity:0; transform:scale(1.45); }
+}
+@keyframes pdip{
+  0%,100%{ transform:scale(1); }
+  8%{ transform:scale(.7); }
+  22%{ transform:scale(1.12); }
+  40%{ transform:scale(1); }
+}
+.prompt:hover .prompt-ring{
+  border-color:var(--accent-lt); box-shadow:0 0 22px rgba(var(--accent-lt-rgb),.35);
+}
+/* "Tap" on touch devices, "Click" where a mouse is the primary pointer. */
+.lbl-click{ display:none; }
+@media (hover:hover) and (pointer:fine){
+  .lbl-tap{ display:none; }
+  .lbl-click{ display:inline; }
 }
 /* idle hint if the invite is left untouched */
 .gate.is-idle .prompt{ animation:nudge 3.2s var(--ease) infinite; }
@@ -670,6 +698,10 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
   .gate.is-open .door-l{ transform:rotateY(-102deg); }
   .gate.is-open .door-r{ transform:rotateY(102deg); }
   .rule .draw{ stroke-dashoffset:0; }
+  /* animations collapse to their end state; show the ripple as static rings */
+  .prompt-wave.w1{ opacity:.55; transform:scale(.62); }
+  .prompt-wave.w2{ opacity:.3; transform:scale(.95); }
+  .prompt-wave.w3{ display:none; }
 }
 </style>
 </head>
@@ -821,9 +853,12 @@ html:not(.js) .gate, html:not(.js) .progress, html:not(.js) .scroll-cue{ display
 
   <button class="prompt" id="gateBtn" type="button" aria-label="Open the invitation">
     <span class="prompt-ring" aria-hidden="true">
-      <svg viewBox="0 0 24 24"><path d="M12 20V7M12 7l-5 5M12 7l5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="prompt-dot"></span>
+      <span class="prompt-wave w1"></span>
+      <span class="prompt-wave w2"></span>
+      <span class="prompt-wave w3"></span>
     </span>
-    Tap to open
+    <span><span class="lbl-tap">Tap</span><span class="lbl-click">Click</span> to open</span>
   </button>
 </div>
 
